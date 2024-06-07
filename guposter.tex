@@ -26,7 +26,7 @@
 % Tip: for long titles, use \parbox{\linewidth}{text}
 
 \block{Abstract}{
-Ungrammatical text poses significant challenges for off-the-shelf dependency parsers. 
+Ungrammatical text poses significant challenges for dependency parsers. 
 In this paper, we explore the effectiveness of using synthetic data to improve performance on essays written by learners of Swedish as a second language. 
 Due to their relevance and ease of annotation, we restrict our initial experiments to word order errors.
 To do that, we build a corrupted version of the standard Swedish Universal Dependencies (UD) treebank Talbanken, mimicking the error patterns and frequency distributions observed in the Swedish Learner Language (SweLL) corpus.
@@ -42,10 +42,18 @@ Results show small but significant performance improvements on the target domain
 \column{0.5}
 
 \block{Background}{
-TODO: some bullet points
+\begin{itemize}
+    \item \textbf{ungrammatical text} is challenging for automatic annotation tools
+    \item the lack of manually annotated L2 corpora makes it hard to train \newline domain-specific models
+    \item experiments with \textbf{synthetically generated errors}, focusing on word order
+\end{itemize}
 
-\setlength{\unitlength}{0.70mm}
+\bigskip
+
+\setlength{\unitlength}{0.65mm}
+\hspace{1em}
 \begin{picture}(562.0,110.0)
+\thicklines
   \put(0.0,0.0){Skattebrott}
   \put(0.0,-15.0){\textit{Tax offences}}
   \put(109.0,0.0){påverkar}
@@ -106,36 +114,42 @@ TODO: some bullet points
 
 \vskip 30pt
 
-TODO: 
-\begin{enumerate}
-    \item preproc step 1
-    \item prepoc step 2
-\end{enumerate}
+\begin{itemize}
+    \item manually annotated \textbf{SweLL} subset with word order errors only
+    \item reference \textbf{Talbanken} treebank
+    \item automatically \textbf{corrupted} version of Talbanken:
+    \begin{itemize}
+        \item \textbf{S-Adv} (misplaced adverbial) errors obtained by swapping adverbial subtrees with their syntactic heads
+        \item \textbf{S-FinV} (misplaced finite verb) error obtained by swapping subject subtrees with their syntactic heads
+        \item other types of errors (\textbf{S-WO}) approximated by swapping pairs of random \newline subsequent tokens
+    \end{itemize}
+\end{itemize}
 
-\setlength{\unitlength}{0.62mm}
+\setlength{\unitlength}{0.60mm}
 \begin{picture}(696.0,130.0)
+\thicklines
 \centering
-  \put(0.0,0.0){Sakta}
-  \put(0.0,-15){\textit{Slowly}}
-  \put(55.0,0.0){och}
-  \put(55.0,-15){\textit{and}}
-  \put(110.0,0.0){kanske}
-  \put(110.0,-15){\textit{perhaps}}
-  \put(174.0,0.0){\underline{avsaktande}}
-  \put(174.0,-15){\textit{\underline{slowing down}}}
-  \put(274.0,0.0){\textbf{rent}}
-  \put(287.0,-15){\textit{\textbf{even}}}
-  \put(320.0,0.0){\textbf{av}}
-  \put(357.0,0.0){är}
-  \put(357,-15){\textit{is}}
-  \put(394.0,0.0){det}
-  \put(394,-15){\textit{the}}
-  \put(431.0,0.0){rätta}
-  \put(431.0,-15){\textit{correct}}
-  \put(486.0,0.0){ordet}
-  \put(486.0,-15){\textit{word}}
-  \put(541.0,0.0){.}
-  \put(541.0,-15){\textit{.}}
+  \put(0.0,0.0){\small Sakta}
+  \put(0.0,-15){\small \textit{Slowly}}
+  \put(55.0,0.0){\small och}
+  \put(55.0,-15){\small \textit{and}}
+  \put(110.0,0.0){\small kanske}
+  \put(110.0,-15){\small \textit{perhaps}}
+  \put(174.0,0.0){\small \underline{avsaktande}}
+  \put(174.0,-15){\small \textit{\underline{slowing down}}}
+  \put(274.0,0.0){\small \textbf{rent}}
+  \put(287.0,-15){\small \textit{\textbf{even}}}
+  \put(320.0,0.0){\small \textbf{av}}
+  \put(357.0,0.0){\small är}
+  \put(357,-15){\small \textit{is}}
+  \put(394.0,0.0){\small det}
+  \put(394,-15){\small \textit{the}}
+  \put(431.0,0.0){\small rätta}
+  \put(431.0,-15){\small\textit{correct}}
+  \put(486.0,0.0){\small ordet}
+  \put(486.0,-15){\small \textit{word}}
+  \put(541.0,0.0){\small .}
+  \put(541.0,-15){\small \textit{.}}
   \put(0.0,15.0){{\tiny ADJ}}
   \put(55.0,15.0){{\tiny CCONJ}}
   \put(110.0,15.0){{\tiny ADV}}
@@ -183,36 +197,36 @@ TODO:
 \centering \vspace{2cm}
 \textbf{S-Adv}
 
-\setlength{\unitlength}{0.47mm}
+\setlength{\unitlength}{0.46mm}
 \vspace{1cm}
 \begin{picture}(880.0,130.0)
-  \put(-40,-15){\textit{(Do)}}
-  \put(0.0,0.0){\textbf{Vi}}
-  \put(0.0,-15){\textbf{\textit{we}}}
-  \put(46.0,0.0){\underline{har}}
-  \put(46.0,-15){\textit{\underline{have}}}
-  \put(92.0,0.0){en}
-  \put(92.0,-15){\textit{a}}
-  \put(129.0,0.0){tendens}
-  \put(129,-15){\textit{tendency}}
-  \put(202.0,0.0){att}
-  \put(202,-15){\textit{to}}
-  \put(248.0,0.0){alltmer}
-  \put(232,-15){\textit{increasingly}}
-  \put(321.0,0.0){spalta}
-  \put(332,-15){\textit{segregate}}
-  \put(385.0,0.0){upp}
-  \put(422.0,0.0){oss}
-  \put(422,-15){\textit{us}}
-  \put(468.0,0.0){och}
-  \put(468,-15){\textit{and}}
-  \put(523.0,0.0){leva}
-  \put(523,-15){\textit{live}}
-  \put(569.0,0.0){generationsvis}
-  \put(569.0,-15){\textit{generation-wise}}
-  \put(705.0,0.0){?}
-  \put(705.0,-15){\textit{?}}
-  \put(0.0,15.0){{\tiny PRON}}
+\thicklines
+  \put(0.0,0.0){\hspace{0.65em} \small \textbf{Vi}}
+  \put(0.0,-15){\hspace{-0.75em}\small \textit{(Do)} \small\textit{\textbf{we}}}
+  \put(46.0,0.0){\small \underline{har}}
+  \put(46.0,-15){\small \textit{\underline{have}}}
+  \put(92.0,0.0){\small en}
+  \put(92.0,-15){\small \textit{a}}
+  \put(129.0,0.0){\small tendens}
+  \put(129,-15){\small \textit{tendency}}
+  \put(202.0,0.0){\small att}
+  \put(202,-15){\small \textit{to}}
+  \put(248.0,0.0){\small alltmer}
+  \put(232,-15){\small \textit{increasingly}}
+  \put(321.0,0.0){\small spalta}
+  \put(332,-15){\small \textit{segregate}}
+  \put(385.0,0.0){\small upp}
+  \put(422.0,0.0){\small oss}
+  \put(422,-15){\small \textit{us}}
+  \put(468.0,0.0){\small och}
+  \put(468,-15){\small \textit{and}}
+  \put(523.0,0.0){\small leva}
+  \put(523,-15){\small \textit{live}}
+  \put(569.0,0.0){\small generationsvis}
+  \put(569.0,-15){\small \textit{generation-wise}}
+  \put(705.0,0.0){\small ?}
+  \put(705.0,-15){\small \textit{?}}
+  \put(0.0,15.0){{\hspace{0.25em} \tiny PRON}}
   \put(46.0,15.0){{\tiny VERB}}
   \put(92.0,15.0){{\tiny DET}}
   \put(129.0,15.0){{\tiny NOUN}}
@@ -268,22 +282,32 @@ TODO:
 \textbf{S-FinV}
 }
 
+\block{}{
+    \begin{center}
+        \includegraphics[width=0.182\textwidth]{images/qr_codes}
+    \end{center}
+}
+
+\column{0.5}
+
 \block{Models}{
 \begin{itemize}
-    \item fine tuning of a Swedish BERT model with the MaChAmp toolkit
+    \item fine tuning a \textbf{Swedish BERT} model with the \textbf{MaChAmp toolkit}
     \item experiments with various data configurations:
     \begin{itemize}
-        \item corrupted data with normative Swedish to mimic real-world frequency of L2 errors
-        \item 50-50 ratio of corrupted and normative sentences
-        \item experiments with sequential training
+        \item \textbf{baseline} trained on the standard Talbanken
+        \item corrupted data with normative Swedish to mimic the \textbf{real-world error \newline frequency}
+        \item \textbf{50-50 ratio} of corrupted and normative sentences
+        \item experiments with \textbf{sequential training}: the baseline further fine-tuned for 10 or 20 extra epochs on purely synthetic error data 
     \end{itemize}
 \end{itemize}
-
+\vskip 1em
 \begin{minipage}{\linewidth}
     \centering
-    \resizebox{0.65\columnwidth}{!}{
+    \resizebox{0.55\columnwidth}{!}{
+    \normalsize
         \begin{tabular}{cr|c|c}
-        \multicolumn{2}{c|}{\textbf{Name}} & \textbf{\% Normative} & \textbf{\% Errors} \\ \hline
+        \multicolumn{2}{c|}{\normalsize\textbf{Name}} & \textbf{\small \% \normalsize Normative} & \textbf{\small \% \normalsize Errors} \\ \hline
         \multicolumn{2}{c|}{baseline} & 100 & 0\\ 
         \multicolumn{2}{c|}{mix15} & 85 & 15 \\ 
         \multicolumn{2}{c|}{mix50} & 50 & 50 \\ 
@@ -295,13 +319,10 @@ TODO:
     \end{tabular}}
 \end{minipage}
 }
-
-\column{0.5}
-
-\block{Results}{
+\block{Results and Conclusions}{
 \begin{minipage}{\linewidth}
     \centering
-    \resizebox{0.7\columnwidth}{!}{
+    \resizebox{0.645\columnwidth}{!}{
     \begin{tabular}{ccccccc}
 \textbf{}         & \multicolumn{2}{c}{\textbf{Talbanken}}                                               & \multicolumn{2}{c}{\textbf{Corrupted}}                        & \multicolumn{2}{c}{\textbf{SweLL}}                            \\
                   & \textbf{LAS}                                         & \textbf{UAS}                  & \textbf{LAS}                  & \textbf{UAS}                  & \textbf{LAS}                  & \textbf{UAS}                  \\ \Xhline{2.5\arrayrulewidth}
@@ -313,17 +334,17 @@ seq20    & 92.53                                                & 94.32         
 \end{tabular}}
 \end{minipage}
 
-\vskip 20pt
+\vskip 30pt
 \begin{itemize}
-    \item synthetic word order errors in training have a small positive effect on actual learner sentences 
-    \item larger improvement on (in-domain) corrupted sentences
-    \item minimal decline on standard language
+    \item synthetic word order errors in training, especially with sequential training, have a \textbf{small positive effect} on actual learner sentences 
+    \item \textbf{larger improvement} on (in-domain) corrupted sentences
+    \item \textbf{minimal decline} on standard language
 \end{itemize}
-\vskip 20pt
+\vskip 40pt
 
 \begin{minipage}{\linewidth}
     \centering
-    \resizebox{0.35\columnwidth}{!}{
+    \resizebox{0.29\columnwidth}{!}{
     \begin{tabular}{lcc}
 \multicolumn{1}{c}{\textbf{}} & \textbf{LAS}                 & \textbf{UAS}                  \\ \Xhline{2.5\arrayrulewidth}
 baseline             & {82.80} & {86.02}  \\ \Xhline{2.5\arrayrulewidth}
@@ -334,29 +355,37 @@ seq20                & 86.02                        & \cellcolor{Gray}89.78 \\ \
 \end{tabular}
     }
 \end{minipage}
-\vskip 20pt
+\vskip 30pt
 \begin{itemize}
-    \item targeted evaluation isolating erroneous segments from SweLL sentences shows a wider performance gap between baseline and specialized models
+    \item \textbf{targeted evaluation} isolating erroneous segments from SweLL sentences shows a \textbf{wider performance gap} between baseline and specialized models
 \end{itemize}
 }
 
-\block{Conclusions and Future Work}{
- TODO
-}
-
-\block{Resources}{
+\block{Future Work}{
 \begin{itemize}
-    \item E. Volodina et al. \textit{{SweLL}-gold}. Distributed via SBX/CLARIN. 2022.
-    \item M. Malmsten et al. \textit{Swedish BERT models}. National Library of Sweden/KBLab. Distributed via HuggingFace. 2020.
-    \item J. Nivre and A. Smith. \textit{Swedish-Talbanken-UD}. Universal Dependencies \newline Consortium. Distributed via LINDAT/CLARIAH-CZ. 2023.
+    \item improving the \textbf{corruption pipeline}:
+    \begin{itemize}
+        \item more realistic S-WO errors
+        \item support for more error types
+    \end{itemize}
+    \item corrupting texts closer to the \textbf{L2 domain}, such as coursebook materials
+    \item rerunning the evaluation on a \textbf{larger test set} (possibly including other error types) and/or repeat experiments and compute \textbf{multi-run averages}
 \end{itemize}
 }
 
-\block{Acknowledgements}{
-This work is supported by the Swedish national research infrastructure Nationella Språkbanken, funded jointly by the Swedish Research Council (2018–2024, contract 2017-00626) and the 10 participating partner institutions.
-}
+%\block{Resources}{
+%\begin{itemize}
+%    \item E. Volodina et al. \textit{{SweLL}-gold}. Distributed via SBX/CLARIN. 2022.
+%    \item M. Malmsten et al. \textit{Swedish BERT models}. National Library of Sweden/KBLab. Distributed via HuggingFace. 2020.
+%    \item J. Nivre and A. Smith. \textit{Swedish-Talbanken-UD}. Universal Dependencies \newline Consortium. Distributed via LINDAT/CLARIAH-CZ. 2023.
+%\end{itemize}
+%}
 
 \end{columns}
+
+\block{Acknowledgements}{
+This work is supported by the Swedish national research infrastructure, funded jointly by the Swedish Research Council and the 10 participating partner institutions.
+}
 
 \end{document}
 
