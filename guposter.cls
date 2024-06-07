@@ -65,7 +65,7 @@ titletotopverticalspace=5cm, titletoblockverticalspace=2cm
         {\Huge \textbf{\@title} \par}
         \vspace*{2em}
         {\textcolor{gublue}{\rule{4cm}{2mm}}\par}
-        \vspace*{1.5em}
+        \vspace*{1em}
         {\huge \@author \par}
         \vspace*{1em}
         {\Large \@institute}
